@@ -2,13 +2,6 @@
 
 This project is a communication skills trainer that uses language models (like Grok API and Whisper) to provide feedback on user input (both text and voice) for better communication. It offers both text and voice-based interaction with transcription and feedback on communication clarity, tone, and effectiveness.
 
-## Table of Contents
-
-1. [Setup Instructions](#setup-instructions)
-2. [Dependencies](#dependencies)
-3. [Optimization Choices](#optimization-choices)
-4. [Usage Examples](#usage-examples)
-
 ## Setup Instructions
 
 ### Step 1: Clone the Repository
@@ -49,7 +42,7 @@ You will also need to download and set up the Whisper model locally or you can u
 Once dependencies are installed and your API key is configured, run the application using the following command:
 
 ```bash
-python main.py
+python ui.py
 ```
 This will launch a Gradio interface in your web browser.
 
