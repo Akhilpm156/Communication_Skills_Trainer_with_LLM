@@ -1,0 +1,8 @@
+langchain
+langchain_groq
+gradio
+python-dotenv
+openai-whisper
+ffmpeg
+gTTS
+langchain-core
