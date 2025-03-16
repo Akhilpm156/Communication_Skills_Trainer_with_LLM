@@ -9,8 +9,8 @@ This project is a communication skills trainer that uses language models (like G
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/communication-skills-trainer.git
-cd communication-skills-trainer
+git clone https://github.com/Akhilpm156/Communication_Skills_Trainer_with_LLM.git
+cd Communication_Skills_Trainer_with_LLM
 ```
 
 ### Step 2: Install Required Dependencies
@@ -81,6 +81,6 @@ Users can upload an audio file directly for transcription. After transcription, 
 
 Example:
 
-Input (Audio File): greeting.wav
+Input (Audio File): response.wav
 Transcription: "Good evening, how are you?"
 Feedback: "The greeting is polite and professional. Consider varying the tone to avoid sounding monotone."
