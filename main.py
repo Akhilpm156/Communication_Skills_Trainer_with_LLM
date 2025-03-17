@@ -7,6 +7,7 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+import re
 
 # Set up environment variables
 load_dotenv()
@@ -85,12 +86,25 @@ def call_feedback_model(user_input):
 
     return chat_history_display, feedback 
 
+def clean_text(response):
+    """Removes special characters and converts fractions like '2/5' to '2 out of 5'."""
+    # Remove '**' around text manually
+    clean_response = response.replace('**', '')  # This removes any '**' marks
+    clean_response = clean_response.replace('*', '') # This removes any '*' marks
+    # Regex to find any fraction in the form of 'X/Y' and convert it to 'X out of Y'
+    clean_response = re.sub(r'(\d+)/(\d+)', r'\1 out of \2', clean_response)
+
+    return clean_response
+
+
 # Gradio function for voice input
 def chat_with_voice(audio_file):
     transcription = transcribe_audio(audio_file)
     response = call_grok_api(transcription)
-    audio_path = text_to_speech(response)
-    return transcription, response, audio_path
+    # removed special char
+    clean_response = clean_text(response)
+    audio_path = text_to_speech(clean_response)
+    return transcription, clean_response, audio_path
 
 # main.py
 
